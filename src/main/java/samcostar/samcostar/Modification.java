@@ -1,0 +1,223 @@
+package samcostar.samcostar;
+
+
+import java.util.List;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+public class Modification extends TestBase {
+	
+	TestUtil testUtil;
+	
+	@FindBy(tagName = "img")
+	@CacheLookup
+	WebElement Modal;
+	
+	@FindBy(xpath = "//a[@id='profile_image']")
+	@CacheLookup
+	WebElement Dropdown;
+	
+	@FindBy(xpath = "//body/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]")
+	@CacheLookup
+	WebElement AccountSettings;
+	
+	@FindBy(xpath = "//a[@id='modify']")
+	@CacheLookup
+	WebElement Modifynow;
+	
+//	@FindBy(xpath = "//input[@id='bank_name1']")
+//	@CacheLookup
+//	WebElement BankName;
+//	
+//	@FindBy(xpath = "//input[@id='bank_acc_no1']")
+//	@CacheLookup
+//	WebElement BankAccNo;
+//	
+////	@FindBy(xpath = "//select[@id='bank_acc_type1']")
+////	@CacheLookup
+////	WebElement AccType;
+//	
+//	@FindBy(xpath = "//input[@id='bank_micr1']")
+//	@CacheLookup
+//	WebElement MicrCode;
+//	
+//	@FindBy(xpath = "//input[@id='bank_ifsc1']")
+//	@CacheLookup
+//	WebElement IfscCode;
+//	
+//	@FindBy(xpath = "//input[@id='bank_branch1']")
+//	@CacheLookup
+//	WebElement BankBrnch;
+//	
+//	@FindBy(xpath = "//input[@id='bank_address1']")
+//	@CacheLookup
+//	WebElement BankAddrs;
+//	
+//	@FindBy(xpath = "//input[@id='bank_proof']")
+//	@CacheLookup
+//	WebElement ProofUpload;
+//	
+//	@FindBy(xpath = "//button[@id='submit']")
+//	@CacheLookup
+//	WebElement Submit;
+	
+	public Modification() {
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void clickOnAccountSettings() throws Exception{
+		
+		//  Modal.click();
+		   // Actions ac = new Actions(driver) ;
+		   // ac.moveToElement(Dropdown).build().perform();
+		    ((JavascriptExecutor)driver).executeScript("arguments[0].click()", driver.findElement(By.xpath("//body/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]")));
+		    Thread.sleep(3000);
+		  // AccountSettings.click();
+		    ((JavascriptExecutor)driver).executeScript("arguments[0].click()", driver.findElement(By.xpath("//a[@id='modify']")));		    
+		    Select dropdown = new Select(driver.findElement(By.id("type_of_modification")));			
+			//List<WebElement> values = dropdown.getAllSelectedOptions();
+		    
+			for(int i = 1; i< 8 ; i++ ){				
+			dropdown.selectByIndex(i);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//input[@id='aadhar']")).sendKeys("707468134106");
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@id='sub']")).click();
+			Thread.sleep(3000);
+			
+			switch (i) {
+			  case 1:
+				  NewBnkAddtn();
+			    break;
+			  case 2:
+				  ExistBnkModify();
+			    break;
+			  case 3:
+				  SegmentAddtn();
+			    break;
+			  case 4:
+				  AddrsChng();
+			    break;
+			  case 5:
+				  NameChng();
+			    break;
+			  case 6:
+				  DobChng();
+			    break;
+			  case 7:
+			    System.out.println("Sunday");
+			    break;
+			}
+			
+		   }
+		    
+	}
+	
+	
+	
+	public void NewBnkAddtn() throws Exception {
+		driver.findElement(By.xpath("//input[@id='bank_name1']")).sendKeys("HDFC");
+		driver.findElement(By.xpath("//input[@id='bank_acc_no1']")).sendKeys("50505050550");
+		Select Acctype = new Select(driver.findElement(By.xpath("//select[@id='bank_acc_type1']")));
+		Acctype.selectByVisibleText("Saving");
+		driver.findElement(By.xpath("//input[@id='bank_micr1']")).sendKeys("505056505");
+		driver.findElement(By.xpath("//input[@id='bank_ifsc1']")).sendKeys("HDFC0000815");
+		driver.findElement(By.xpath("//input[@id='bank_branch1']")).sendKeys("Churchgate");
+		driver.findElement(By.xpath("//input[@id='bank_address1']")).sendKeys("HDFC House H T Parekh Marg Backbay Reclamation Churchgate Mumbai 400020");
+		Select Prooftype = new Select(driver.findElement(By.xpath("//select[@id='bank_acc_type2']")));
+		Prooftype.selectByVisibleText("Passbook");
+		driver.findElement(By.xpath("//input[@id='bank_proof']")).sendKeys("C:\\Users\\samco\\Pictures\\Capture.png");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@id='submit']")).click();
+		Thread.sleep(3000);
+		driver.navigate().to("https://star.samco.in/modification");
+		//driver.findElement(By.xpath("//body/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/label[1]/div[1]")).click();
+		//driver.findElement(By.xpath("//button[@id='payment_submit']")).click();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+	}
+	
+	public void ExistBnkModify() throws Exception {
+		driver.findElement(By.xpath("//input[@id='bank_name1']")).sendKeys("HDFC");
+		driver.findElement(By.xpath("//input[@id='bank_acc_no1']")).sendKeys("50505050550");
+		Select Acctype = new Select(driver.findElement(By.xpath("//select[@id='bank_acc_type1']")));
+		Acctype.selectByVisibleText("Saving");
+		driver.findElement(By.xpath("//input[@id='bank_micr1']")).sendKeys("505056505");
+		driver.findElement(By.xpath("//input[@id='bank_ifsc1']")).sendKeys("HDFC0000815");
+		driver.findElement(By.xpath("//input[@id='bank_branch1']")).sendKeys("Churchgate");
+		driver.findElement(By.xpath("//input[@id='bank_address1']")).sendKeys("HDFC House H T Parekh Marg Backbay Reclamation Churchgate Mumbai 400020");
+		Select Prooftype = new Select(driver.findElement(By.xpath("//select[@id='bank_acc_type2']")));
+		Prooftype.selectByVisibleText("Passbook");
+		driver.findElement(By.xpath("//input[@id='bank_proof']")).sendKeys("C:\\Users\\samco\\Pictures\\Capture.png");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@id='submit']")).click();
+		Thread.sleep(3000);
+		driver.navigate().to("https://star.samco.in/modification");
+	}
+	
+	public void SegmentAddtn() throws Exception {
+		driver.findElement(By.xpath("//tbody/tr[2]/td[1]/input[1]")).click();
+		driver.findElement(By.xpath("//input[@id='submit']")).click();
+		
+		Alert al = driver.switchTo().alert();
+		
+		Select Acctype = new Select(driver.findElement(By.xpath("//select[@id='sel-income-proof']")));
+		Acctype.selectByVisibleText("Salary Slip");
+		driver.findElement(By.xpath("//body/div[3]/div[1]/div[3]/div[1]/div[6]/div[2]/div[1]/div[2]/form[1]/div[1]/div[2]/div[3]/div[1]")).click();
+		driver.findElement(By.xpath("//input[@id='upload-doc']")).sendKeys("C:\\Users\\samco\\Pictures\\Capture.png");
+		al.accept();
+		Thread.sleep(3000);
+		driver.navigate().to("https://star.samco.in/modification");
+	}
+	
+	public void AddrsChng() throws Exception {
+		
+		Select Addrstype = new Select(driver.findElement(By.xpath("//select[@id='address_type']")));
+		Addrstype.selectByVisibleText("Correspondence");
+		driver.findElement(By.xpath("//input[@id='addresss_line1']")).sendKeys("ROOM NO-154-50/1-2, DHARAVI");
+		driver.findElement(By.xpath("//input[@id='addresss_line2']")).sendKeys("HAYAT COMPOUND PLOT NO.22!NEAR VAIBHAV APARTMENT");
+		driver.findElement(By.xpath("//input[@id='addresss_line3']")).sendKeys("MUMBAI");
+		driver.findElement(By.xpath("//input[@id='addresss_line3']")).sendKeys("MAHARASHTRA");
+		driver.findElement(By.xpath("//input[@id='addresss_line3']")).sendKeys("400017");
+		Select Prooftype = new Select(driver.findElement(By.xpath("//select[@id='address_proof_type']")));
+		Prooftype.selectByVisibleText("Aadhaar card");
+		driver.findElement(By.xpath("//input[@id='address_proof']")).sendKeys("C:\\Users\\samco\\Pictures\\Capture.png");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@id='submit']")).click();
+		Thread.sleep(3000);
+		driver.navigate().to("https://star.samco.in/modification");
+
+	}
+   public void NameChng() throws Exception {
+		
+		driver.findElement(By.xpath("//input[@id='newname']")).sendKeys("Harry");
+		driver.findElement(By.xpath("//input[@id='reason']")).sendKeys("HAYAT COMPOUND");
+		driver.findElement(By.xpath("//input[@id='name_proof1']")).sendKeys("C:\\Users\\samco\\Pictures\\Capture.png");
+		driver.findElement(By.xpath("//input[@id='name_proof2']")).sendKeys("C:\\Users\\samco\\Pictures\\Capture.png");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@id='submit']")).click();
+		Thread.sleep(3000);
+		driver.navigate().to("https://star.samco.in/modification");
+
+	}
+	
+   public void DobChng() throws Exception {
+		
+		driver.findElement(By.xpath("//input[@id='newdob']")).sendKeys("1994-09-23");
+		driver.findElement(By.xpath("//input[@id='dob_proof1']")).sendKeys("C:\\Users\\samco\\Pictures\\Capture.png");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@id='submit']")).click();
+		Thread.sleep(3000);
+		driver.navigate().to("https://star.samco.in/modification");
+
+	}
+	
+	}

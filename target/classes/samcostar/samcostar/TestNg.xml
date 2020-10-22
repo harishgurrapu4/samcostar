@@ -3,7 +3,35 @@
 <suite guice-stage="DEVELOPMENT" name="SamcoStar suite">
   <test name="SamcoStar test">
     <classes>
-         <class name="samcostar.samcostar.HomePageTest"/>
+         <class name="samcostar.samcostar.LoginPageTest">
+         <methods>
+                <include name="loginPageTitleTest" />
+                <include name="validateSamcoImageTest" />
+                <include name="validateStarImageTest" />
+                <include name="WrongPasswloginTest" />
+                <include name="BlankLoginTest" />
+                <include name="loginTest" />
+            </methods>
+            </class>
+         <class name="samcostar.samcostar.HomePageTest">
+         <methods>
+                <include name="verifyHomePageTitleTest" />
+                <include name="verifyUserNameTest" />
+                <include name="clickOnMyProfileTest" />
+                <include name="clickOnAccountSettingsTest" />
+                <include name="clickOnLogoutTest" />
+                <include name="AssetsTest" />
+                <include name="ViewHoldingsTest" />
+                <include name="ViewPositionsTest" />
+                <include name="ViewMarginsTest" />
+                <include name="ViewContractNotesTest" />
+                <include name="BrokenLinksTest" />
+            </methods>
+            </class>
+         <class name="samcostar.samcostar.ModificationTest"/>
+         <class name="samcostar.samcostar.SubscriptionTest"/>
+         <class name="samcostar.samcostar.ReferalCentreTest"/>
+         <class name="samcostar.samcostar.CorporateActionTest"/>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Default suite -->

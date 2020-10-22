@@ -7,6 +7,8 @@ import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
@@ -148,6 +150,42 @@ public class HomePage extends TestBase {
 	    
 	      
 	}
+	
+	public void Assets() throws Exception{
+		driver.findElement(By.xpath("//input[@id='nav_date']")).click();
+		   WebElement dateWidget = driver.findElement(By.xpath("//div[@id='ui-datepicker-div']"));
+		   List<WebElement> columns = dateWidget.findElements(By.tagName("td"));
+
+		   for (WebElement cell: columns){
+		      //Select 13th Date 
+		      if (cell.getText().equals("13")){
+		         cell.findElement(By.linkText("13")).click();
+		         break;
+		    }
+		   }
+		   ((JavascriptExecutor)driver).executeScript("arguments[0].click()", driver.findElement(By.xpath("//button[@id='nav_button']")));
+		   Thread.sleep(3000);
+	}
+	
+	public void ViewHoldings() throws Exception{
+		((JavascriptExecutor)driver).executeScript("arguments[0].click()", driver.findElement(By.xpath("//a[contains(text(),'View All Holdings')]")));	
+		Thread.sleep(3000);
+	}
+	
+	public void ViewPositions() throws Exception{
+		((JavascriptExecutor)driver).executeScript("arguments[0].click()", driver.findElement(By.xpath("//a[contains(text(),'View All Open Position')]")));
+		Thread.sleep(3000);
+	}
+	
+	public void ViewMargins() throws Exception{
+		((JavascriptExecutor)driver).executeScript("arguments[0].click()", driver.findElement(By.xpath("//a[contains(text(),'View All Margin Positions')]")));
+		Thread.sleep(3000);
+	}
+	
+	public void ViewContractNotes() throws Exception{
+		((JavascriptExecutor)driver).executeScript("arguments[0].click()", driver.findElement(By.xpath("//a[contains(text(),'View All Contract Notes')]")));
+		Thread.sleep(3000);
+	}	
 	
 	public void BrokenLinks(){
 		

@@ -76,6 +76,38 @@ public class HomePageTest extends TestBase {
 	}
 	
 	@Test(priority=6)
+	public void AssetsTest() throws Exception{
+		testUtil.waitForLoad(driver);
+		homePage.Assets();
+		
+	}
+	
+	@Test(priority=7)
+	public void ViewHoldingsTest() throws Exception{
+		testUtil.waitForLoad(driver);
+		homePage.ViewHoldings();
+	}
+	
+	@Test(priority=8)
+	public void ViewPositionsTest() throws Exception{
+		testUtil.waitForLoad(driver);
+		homePage.ViewPositions();
+
+	}
+
+	@Test(priority=9)
+	public void ViewMarginsTest() throws Exception{
+		testUtil.waitForLoad(driver);
+		homePage.ViewMargins();
+	}
+	
+	@Test(priority=10)
+	public void ViewContractNotesTest() throws Exception{
+		testUtil.waitForLoad(driver);
+		homePage.ViewContractNotes();
+	}	
+	
+	@Test(priority=11)
 	public void BrokenLinksTest(){
 		homePage.BrokenLinks();
 	}

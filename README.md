@@ -1,2 +1,2 @@
 # samcostar
-First Automation Project created by Harish from scratch
+Automation Project created by Harish from scratch

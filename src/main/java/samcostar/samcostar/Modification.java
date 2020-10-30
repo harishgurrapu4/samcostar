@@ -108,19 +108,15 @@ public class Modification extends TestBase {
 				  ExistBnkModify();
 			    break;
 			  case 3:
-				  //SegmentAddtn();
-				  System.out.println("Segment is deleted");
-			    break;
-			  case 4:
 				  AddrsChng();
 			    break;
-			  case 5:
+			  case 4:
 				  System.out.println("Name and Email change");
 			    break;
-			  case 6:
+			  case 5:
 				  NameChng();
 			    break;
-			  case 7:
+			  case 6:
 				  DobChng();;
 			    break;
 			}

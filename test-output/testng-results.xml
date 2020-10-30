@@ -1,25 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27198" started-at="2020-10-19T08:07:55Z" finished-at="2020-10-19T08:08:22Z">
+  <suite name="Default suite" duration-ms="143260" started-at="2020-10-30T13:23:03Z" finished-at="2020-10-30T13:25:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27198" started-at="2020-10-19T08:07:55Z" finished-at="2020-10-19T08:08:22Z">
-      <class name="samcostar.samcostar.FamilyTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:samcostar.samcostar.FamilyTest@4b4523f8]" name="setUp" is-config="true" duration-ms="11307" started-at="2020-10-19T08:07:55Z" finished-at="2020-10-19T08:08:06Z">
+    <test name="Default test" duration-ms="143260" started-at="2020-10-30T13:23:03Z" finished-at="2020-10-30T13:25:26Z">
+      <class name="samcostar.samcostar.ReferalCentreTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:samcostar.samcostar.ReferalCentreTest@369f73a2]" name="setUp" is-config="true" duration-ms="22786" started-at="2020-10-30T13:23:03Z" finished-at="2020-10-30T13:23:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Familytest()[pri:1, instance:samcostar.samcostar.FamilyTest@4b4523f8]" name="Familytest" duration-ms="15137" started-at="2020-10-19T08:08:06Z" finished-at="2020-10-19T08:08:22Z">
+        <test-method status="PASS" signature="validatereferalentry(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:samcostar.samcostar.ReferalCentreTest@369f73a2]" name="validatereferalentry" duration-ms="26207" started-at="2020-10-30T13:23:26Z" data-provider="referaldata" finished-at="2020-10-30T13:23:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Tom]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test3010@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8.888888888E9]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Familytest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:samcostar.samcostar.FamilyTest@4b4523f8]" name="tearDown" is-config="true" duration-ms="727" started-at="2020-10-19T08:08:22Z" finished-at="2020-10-19T08:08:22Z">
+        </test-method> <!-- validatereferalentry -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:samcostar.samcostar.ReferalCentreTest@369f73a2]" name="tearDown" is-config="true" duration-ms="750" started-at="2020-10-30T13:23:52Z" finished-at="2020-10-30T13:23:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- samcostar.samcostar.FamilyTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:samcostar.samcostar.ReferalCentreTest@369f73a2]" name="setUp" is-config="true" duration-ms="10687" started-at="2020-10-30T13:23:53Z" finished-at="2020-10-30T13:24:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="validatereferalentry(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:samcostar.samcostar.ReferalCentreTest@369f73a2]" name="validatereferalentry" duration-ms="26785" started-at="2020-10-30T13:24:04Z" data-provider="referaldata" finished-at="2020-10-30T13:24:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[David]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test13010@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8.888888888E9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatereferalentry -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:samcostar.samcostar.ReferalCentreTest@369f73a2]" name="tearDown" is-config="true" duration-ms="753" started-at="2020-10-30T13:24:30Z" finished-at="2020-10-30T13:24:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:samcostar.samcostar.ReferalCentreTest@369f73a2]" name="setUp" is-config="true" duration-ms="15562" started-at="2020-10-30T13:24:31Z" finished-at="2020-10-30T13:24:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="validatereferalentry(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:samcostar.samcostar.ReferalCentreTest@369f73a2]" name="validatereferalentry" duration-ms="38488" started-at="2020-10-30T13:24:47Z" data-provider="referaldata" finished-at="2020-10-30T13:25:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Mukta]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test23010@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8.888888888E9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatereferalentry -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:samcostar.samcostar.ReferalCentreTest@369f73a2]" name="tearDown" is-config="true" duration-ms="685" started-at="2020-10-30T13:25:25Z" finished-at="2020-10-30T13:25:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- samcostar.samcostar.ReferalCentreTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

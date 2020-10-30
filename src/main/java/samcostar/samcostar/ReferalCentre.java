@@ -23,7 +23,7 @@ public class ReferalCentre extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void Referalcentre() throws Exception{
+	public void Referalcentre(String Name, String Email, String Mob) throws Exception{
 		
 		Thread.sleep(3000);
 		//Actions ac = new Actions(driver) ;
@@ -38,9 +38,9 @@ public class ReferalCentre extends TestBase{
 				   driver.findElement(By.linkText("REFER")).click();
 				  // Cashplus.click();
 			       Thread.sleep(3000);
-			       driver.findElement(By.xpath("//input[@id='txtName']")).sendKeys("Harry");
-			       driver.findElement(By.xpath("//input[@id='txtEmail']")).sendKeys("test@gmail.com");
-			       driver.findElement(By.xpath("//input[@id='txtMobile']")).sendKeys("9595959959");
+			       driver.findElement(By.xpath("//input[@id='txtName']")).sendKeys(Name);
+			       driver.findElement(By.xpath("//input[@id='txtEmail']")).sendKeys(Email);
+			       driver.findElement(By.xpath("//input[@id='txtMobile']")).sendKeys(Mob);
 			       Thread.sleep(3000);
 			       driver.findElement(By.xpath("//input[@id='submit']")).click();
 			       Thread.sleep(3000);
